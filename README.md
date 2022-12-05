@@ -1,3 +1,4 @@
 # RecipeProject
 Веб-сервер для сохранения и поиска учетных записей и их публикаций.
-Для реализации используются: Java 11, Apache TomCat, Gradle, Spring, Hibernate, REST, PostgreSQL
+Для проекта используются: Java 11, Apache TomCat, Gradle, Spring, Hibernate, REST, PostgreSQL
+Сервер реализует POST, GET запросы и передает пользьзователю информацию, соответствующую запросу.
