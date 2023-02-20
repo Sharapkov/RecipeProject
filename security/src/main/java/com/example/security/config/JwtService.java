@@ -16,7 +16,7 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
-    private static final String SECRET_KEY = "244226452948404D635166546A576E5A7234743777217A25432A462D4A614E64"; // https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
+    private static final String SECRET_KEY = "6A586E3272357538782F413F4428472B4B6250655367566B5970337336763979244226452948404D635166546A576D5A7134743777217A25432A462D4A614E64"; // https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -38,8 +38,8 @@ public class JwtService {
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
-                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
+                .signWith(getSignInKey(), SignatureAlgorithm.HS512)
                 .compact();
     }
 
