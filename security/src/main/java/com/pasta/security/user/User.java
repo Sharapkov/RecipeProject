@@ -1,4 +1,4 @@
-package com.example.security.user;
+package com.pasta.security.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

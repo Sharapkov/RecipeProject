@@ -1,4 +1,4 @@
-package com.example.security.user;
+package com.pasta.security.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.example.security.config;
+package com.pasta.security.config;
 
 
 import jakarta.servlet.FilterChain;

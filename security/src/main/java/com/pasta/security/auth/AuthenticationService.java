@@ -1,9 +1,9 @@
-package com.example.security.auth;
+package com.pasta.security.auth;
 
-import com.example.security.config.JwtService;
-import com.example.security.user.Role;
-import com.example.security.user.User;
-import com.example.security.user.UserRepository;
+import com.pasta.security.config.JwtService;
+import com.pasta.security.user.Role;
+import com.pasta.security.user.User;
+import com.pasta.security.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

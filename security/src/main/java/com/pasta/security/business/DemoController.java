@@ -1,4 +1,4 @@
-package com.example.security.business;
+package com.pasta.security.business;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
