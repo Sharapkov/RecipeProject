@@ -13,12 +13,19 @@
 1. запустить сервер и запустить POSTMAN.
 
 2. отправить  POST-запрос с телом вида:
+
 {
+
     "firstname": "Aaa",
+
     "lastname": "Bbb",
+
     "email": "Aaa@mail.com",
+
     "password": "123456789"
+
 }
+
 на localhost:8080/api/v1/auth/register и скопировать полученный токен.
 
 3. (по желанию) отправить POST-запрос с телом вида:
