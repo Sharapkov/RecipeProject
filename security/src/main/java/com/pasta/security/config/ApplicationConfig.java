@@ -1,6 +1,6 @@
 package com.pasta.security.config;
 
-import com.pasta.security.user.UserRepository;
+import com.pasta.security.model.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
