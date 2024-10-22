@@ -1,0 +1,6 @@
+id;name;description
+2f8ad0f1-9a67-4de4-93fc-2a12f4604820;USER_LIST;Просмотр списка пользователей
+c1a9305f-b2e2-4a4e-97e0-5c07d7dd1e1e;USER_CREATE;Создание пользователей
+e5c8a8a4-efb9-4f95-8a0d-b9f82f181a8d;USER_READ;Просмотр одного пользователя
+1ff81442-4d5d-4977-8e01-77b15599f92f;USER_UPDATE;Редактирование пользователей
+885e4b39-6b6b-4a12-b23a-0e7d9ae5d3ef;USER_DELETE;Удаление пользователей

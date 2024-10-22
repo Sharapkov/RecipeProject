@@ -1,0 +1,8 @@
+id;email;password;firstname
+d0485dcd-41e2-4c9b-8a1d-98d4f49c0f0a;guest@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Гость
+e65e2432-5c3f-4d3a-b519-7eef1e02e7c7;user@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Пользователь
+4d79b018-f2ae-4570-976c-9a8c36c61611;admin@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Админ
+8d64839b-51a8-4fc1-9b3f-0f2efbf6b5fe;expert@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Эксперт
+c7beeb5c-621f-4398-8c1a-49ff056b01a0;owner@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Владелец
+f9a2fd17-2c0c-4a29-9a97-9c787ce3e0a3;support@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Техподдержка
+ac6e2629-89d7-4e78-8f8e-b33f30c0b546;company@recipe.ru;$2a$10$YeiKDMVI7jnmxcbtZ/2oz.SGb4NQIeXkWwmDloUE2jcx2z6/yqpuy;Компания

@@ -1,0 +1,8 @@
+id;name;description
+e47a592c-9f0b-49da-8f8c-697eb200fd67;GUEST;Гость
+b6c56420-3017-4c74-9a2e-69f2953b4f21;USER;Пользователь
+a6d03f89-1d27-42a2-b8e7-81f3ac45e37d;ADMIN;Администратор
+d9b24068-4e08-4e9a-aa29-2a62a5d3a994;EXPERT;Эксперт
+f26e7d12-62c8-48d7-bd50-87266a3a6d18;OWNER;Владелец
+9a4b6d58-2a11-4e99-99e9-5832d7f7feef;SUPPORT;Технический персонал
+c180f0ed-67a1-44e9-9df9-9728a4b2e8c2;COMPANY;Компания
