@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="00000000000001" author="sharapkov">
+
+
+        <createTable tableName="users">
+            <column name="id" type="uuid">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_id"/>
+            </column>
+            <column name="firstname" type="varchar(100)"/>
+            <column name="lastname" type="varchar(100)"/>
+            <column name="email" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_user_email"/>
+            </column>
+            <column name="password" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="role">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_role_name"/>
+            </column>
+            <column name="description" type="varchar(250)"/>
+        </createTable>
+
+        <createTable tableName="user_role">
+            <column name="user_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="permission">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_permission_name"/>
+            </column>
+            <column name="description" type="varchar(250)"/>
+        </createTable>
+
+        <createTable tableName="role_permission">
+            <column name="role_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="permission_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="user_id, role_id" tableName="user_role"/>
+        <addPrimaryKey columnNames="role_id, permission_id" tableName="role_permission"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="user_role"
+                                 constraintName="fk_user_role_role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="user_role"
+                                 constraintName="fk_user_role_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="role_permission"
+                                 constraintName="fk_role_permission_role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"/>
+
+        <addForeignKeyConstraint baseColumnNames="permission_id"
+                                 baseTableName="role_permission"
+                                 constraintName="fk_role_permission_permission_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="permission"/>
+
+        <createTable tableName="token">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="refresh_token" type="varchar(1000)"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="token"
+                                 constraintName="fk_token_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+        <loadData
+                file="config/liquibase/data/user.csv"
+                separator=";"
+                tableName="users">
+            <column name="id" type="uuid"/>
+            <column name="email" type="string"/>
+            <column name="firstname" type="string"/>
+            <column name="lastname" type="string"/>
+        </loadData>
+        <loadData
+                file="config/liquibase/data/role.csv"
+                separator=";"
+                tableName="role">
+            <column name="id" type="string"/>
+            <column name="name" type="string"/>
+            <column name="description" type="string"/>
+        </loadData>
+        <loadData
+                file="config/liquibase/data/permission.csv"
+                separator=";"
+                tableName="permission">
+            <column name="id" type="string"/>
+            <column name="name" type="string"/>
+            <column name="description" type="string"/>
+        </loadData>
+        <loadData
+                file="config/liquibase/data/user_role.csv"
+                separator=";"
+                tableName="user_role">
+            <column name="user_id" type="uuid"/>
+            <column name="role_id" type="uuid"/>
+        </loadData>
+        <loadData
+                file="config/liquibase/data/role_permission.csv"
+                separator=";"
+                tableName="role_permission">
+            <column name="role_id" type="uuid"/>
+            <column name="permission_id" type="uuid"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.10.xsd">
+    <changeSet id="20240530131300" author="e.sharapkov">
+
+
+            <createTable tableName="recipe">
+                <column name="id" type="BIGINT" autoIncrement="true">
+                    <constraints primaryKey="true" nullable="false"/>
+                </column>
+                <column name="name" type="VARCHAR(255)"/>
+                <column name="description" type="TEXT"/>
+            </createTable>
+
+            <createTable tableName="ingredients">
+                <column name="id" type="BIGINT">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="ingredient" type="VARCHAR(255)"/>
+                <column name="recipe_id" type="BIGINT">
+                    <constraints nullable="false" foreignKeyName="fk_ingredients_recipe" referencedTableName="recipe" referencedColumnNames="id"/>
+                </column>
+            </createTable>
+
+            <addPrimaryKey columnNames="id, ingredient" tableName="ingredients"/>
+
+            <createTable tableName="directions">
+                <column name="id" type="BIGINT">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="direction" type="VARCHAR(255)"/>
+                <column name="recipe_id" type="BIGINT">
+                    <constraints nullable="false" foreignKeyName="fk_directions_recipe" referencedTableName="recipe" referencedColumnNames="id"/>
+                </column>
+            </createTable>
+
+            <addPrimaryKey columnNames="id, direction" tableName="directions"/>
+
+    </changeSet>
+
+
+</databaseChangeLog>

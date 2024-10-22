@@ -1,15 +1,51 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jwt_security
+    url: jdbc:postgresql://localhost:5432/recipe
     username: postgres
-    password: 2517uhjn
-    driver-class-name: org.postgresql.Driver
+    password: postgres
   jpa:
-    hibernate:
-      ddl-auto: create-drop
     show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: 'classpath:config/liquibase/master.xml'
+
+logging:
+  level:
+    root: INFO
+
+
+springfox:
+  documentation:
+    swaggerUi:
+      baseUrl: /api
+    openApi:
+      v3:
+        path: /api/v3/api-docs
+    swagger:
+      v2:
+        path: /api/v2/api-docs
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: advent
+
+#http://localhost:8080/api/swagger-ui/index.html
+
+jwt:
+  token:
+    validity:
+      access: 172800
+      refresh: 345600
+    prefix: 'Bearer '
+  authorities:
+    key: auth
+  signing:
+    accessKey: accessKey
+    refreshKey: refreshKey
+  header:
+    string: Authorization
+
+cors:
+  allowed-origins: 'http://localhost:8080,http://localhost:8081'
