@@ -31,7 +31,7 @@ springdoc:
     disable-swagger-default-url: true
     path: advent
 
-#http://localhost:8080/api/swagger-ui/index.html
+#http://localhost:8080/swagger-ui/index.html?urls.primaryName=users#/
 
 jwt:
   token:
