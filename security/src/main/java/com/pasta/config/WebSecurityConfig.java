@@ -67,6 +67,7 @@ public class WebSecurityConfig {
                 .antMatchers(HttpMethod.POST, "/user/registration").permitAll()
                 .antMatchers(HttpMethod.POST, "/user/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/user/logout").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/v1/demo-controller").permitAll()
                 .antMatchers("/url").permitAll()
                 .antMatchers("/url/**").permitAll()
                 .antMatchers("/lk/**").permitAll()
