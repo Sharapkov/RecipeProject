@@ -10,4 +10,5 @@
 для запуска win в контейнере:
 1. git clone ...
 2. docker build -t recipe . (с точкой)
-3. docker-compose up --build
+3. docker create volume db_recipe_volume
+4. docker-compose up --build
